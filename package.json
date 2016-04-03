@@ -20,7 +20,11 @@
     "express": "latest",
     "request": "latest",
     "cheerio": "latest",
-    "ejs": "latest"
+    "ejs": "latest",
+    "request-promise": "latest",
+    "fs-promise": "latest",
+    "diskdb": "latest",
+    "promise": "7.1.1"
   },
   "engines": {
     "node": "5.5.0"
