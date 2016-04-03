@@ -4,6 +4,16 @@ var request = require('request');
 var cheerio = require('cheerio');
 var app = express();
 
+var port = process.env.PORT || 8082;
+
+app.set('view engine', 'ejs');
+
+app.use(express.static(__dirname + '/public'));
+
+app.get('/', function (req, res) {
+  res.render('index');
+});
+
 app.get('/scrape', function (req, res) {
   // The URL we will scrape from - in our example Anchorman 2.
 
@@ -30,6 +40,7 @@ app.get('/scrape', function (req, res) {
   })
 })
 
-app.listen('8081')
-console.log('Magic happens on port 8081');
+app.listen(port, function () {
+  console.log('Our app is running on http://localhost:' + port);
+});
 exports = module.exports = app;
